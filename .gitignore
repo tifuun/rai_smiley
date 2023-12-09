@@ -33,6 +33,10 @@ dmypy.json
 *.gz
 build
 dist
+*.cif
+*.svg
+# but allow svgs in img
+!img/*.svg
 
 # VIM
 *.sw*
@@ -58,3 +62,4 @@ Thumbs.db
 # (exclude *.env but INCLUDE *.expample.env)
 *.env
 !*.example.env
+
