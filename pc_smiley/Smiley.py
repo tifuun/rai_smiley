@@ -1,6 +1,15 @@
 """Smiley.py: contains Smiley component."""
 
+from importlib import resources as importlib_resources
+
+import pandas as pd
 import pycif as pc
+
+from pc_smiley import resources
+
+facial_data = pd.read_csv(
+    importlib_resources.files(resources) / 'facial_data.csv'
+    ).loc[0, :]
 
 
 class Smiley(pc.Component):
@@ -47,15 +56,20 @@ class Smiley(pc.Component):
             smile.bbox.mid.hflip()
 
         eye_l.marks.center.to(
-            face.bbox.interpolate(0.3, 0.7)
+            face.bbox.interpolate(
+                facial_data.interocular_distance,
+                0.7
+                )
             )
 
         eye_r.marks.center.to(
-            face.bbox.interpolate(0.7, 0.7)
+            face.bbox.interpolate(
+                1 - facial_data.interocular_distance,
+                0.7)
             )
 
         smile.bbox.mid.to(
-            face.bbox.interpolate(0.5, 0.2)
+            face.bbox.interpolate(0.5, facial_data.mouth_offset)
             )
 
         self.add_subpolygon(face, self.layers.face)
