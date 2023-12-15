@@ -18,7 +18,7 @@ pip install git+https://gitlab.example.com/exp-ast/pc_smiley
 # File Structure
 
 The rest of this README explains what each file in this example repository does.
-The overall file structure looks like this
+The overall file structure looks like this:
 
 ```
 <repository root>
@@ -99,7 +99,7 @@ To avoid these pains, we use `importlib.resources`
 to read in resource files.
 Take a look inside `Smiley.py` to learn how this works.
 
-## .gitignore
+## `.gitignore`
 
 `.gitignore` tells git what files to ignore.
 This can be stuff like temporary files created by your text
