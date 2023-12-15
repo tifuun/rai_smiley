@@ -1,12 +1,24 @@
 """Smiley.py: contains Smiley component."""
 
+# We will use `importlib.resources` to read in the data from
+# `resources/facial_data.csv`.
 from importlib import resources as importlib_resources
 
+# We will use pandas to read `facial_data.csv`.
+# Admittedly, this is extremely overkill.
+# Python's built-in `csv` package or even standard string
+# parsing operations would be a better tool for this job.
+# But here we use pandas so that I have a chance to demonstrate
+# how to declare external dependencies in `pyproject.toml`.
 import pandas as pd
 import pycif as pc
 
+# Here we import the local `resources` module
 from pc_smiley import resources
 
+# And this is how we read in the facial_data.csv file.
+# The last .loc[0, :] line is there just to convert
+# the Dataframe into a Series (since there's only one row)
 facial_data = pd.read_csv(
     importlib_resources.files(resources) / 'facial_data.csv'
     ).loc[0, :]

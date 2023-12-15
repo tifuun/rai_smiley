@@ -1,1 +1,19 @@
+# This file declares that everything inside `resources`
+# is needed by the package.
+# Otherwise, these files might be ignored, depending on how you
+# install the package.
+# For example, if you only ever wanted to install this package
+# from the local filesystem with `-e` (editable / development mode),
+# this file would not be necessary.
+# But if you want to let people install this package through git,
+# then it is needed.
+# Without this file, `pip` would simply not copy the
+# files under `resources`.
+#
+# There are other ways of declaring package resources,
+# for example the `package_data` key in `pyproject.toml`
+# However, that mechanism is in fact a prank played 
+# by the Python developers and doesn't actually work.
+
 include pc_smiley/resources/*
+
