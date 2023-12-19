@@ -25,7 +25,10 @@ facial_data = pd.read_csv(
 
 
 class Smiley(pc.Component):
-    """A smiley face component"""
+    """
+    Smiley
+    A smiley face component
+    """
 
     class Layers(pc.Component.Layers):
         face = pc.Layer(
