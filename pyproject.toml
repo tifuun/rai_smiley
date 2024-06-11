@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+# This section is about our project itself
+
+name = "rai_smiley"
+version = "2.0.0"
+description = "A RAIMAD package that demonstrates how to make RAIMAD packages."
+authors = [
+	{name = "maybetree", email = "maybetree48@proton.me"}
+	]
+license = { file = "LICENSE.txt" }
+readme = "README.md"
+classifiers = [
+	'Programming Language :: Python :: 3',
+	]
+
+# Which Python versions do we support?
+requires-python = ">=3.10"
+
+dependencies = [
+	"pandas",
+	"raimad",
+	]
+
+# `pyproject.toml` is also used to declare dependencies.
+# In this case, we depend on `pandas` in order to read
+# the `facial_data.csv` file,
+# so we include `pandas` in the `dependencies` key.
+# This tells `pip` to install `pandas` when installing
+# `rai_smiley`.
+# RAIMAD itself is also in the dependencies list.
+# 
+# In larger projects, it is recommended to also include
+# version bounds for your dependencies.
+# So, instead of simply putting `pandas`,
+# you would put something like `pandas>=2.1.2`.
+# You can find out which packages are installed and their versions
+# by running `pip freeze`.
+
