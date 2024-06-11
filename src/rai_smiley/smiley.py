@@ -1,5 +1,5 @@
 from importlib import resources as importlib_resources
-from math import degrees
+from math import radians
 
 import pandas as pd
 import raimad as rai
@@ -36,17 +36,17 @@ class Smiley(rai.Compo):
         left_eye = rai.Mark("Left eye center")
         right_eye = rai.Mark("Right eye center")
 
-    def _make(self, eye_size: float = 5, happiness: float = 5):
-        face = rai.Circle(50).proxy()
-        eye_l = rai.Circle(eye_size).proxy()
+    def _make(self, eye_size: float = 5, happiness: float = 8):
+        face = rai.Circle(50).proxy().map('face')
+        eye_l = rai.Circle(eye_size).proxy().map('eyes')
         eye_r = eye_l.copy()
 
         smile = rai.AnSec(
-            thetamid=degrees(-90),
-            dtheta=degrees(abs(happiness) * 4),
+            thetamid=radians(-90),
+            dtheta=radians(abs(happiness) * 10),
             r1=40,
             r2=45
-            ).proxy()
+            ).proxy().map('mouth')
 
         if happiness < 0:
             smile.bbox.mid.hflip()
