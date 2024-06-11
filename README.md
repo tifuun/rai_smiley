@@ -23,26 +23,29 @@ The overall file structure looks like this:
 ```
 <repository root>
 │
-├── rai_smiley
-│   │ 
-│   ├── smiley.py
-│   ├── __init__.py
-│   └── resources
-│       │ 
-│       ├── facial_data.csv
-│       └── __init__.py
-│
+├── src
+│   └── rai_smiley
+│       ├── __init__.py
+│       │
+│       ├── resources
+│       │   ├── __init__.py
+│       │   └── facial_data.csv
+│       │
+│       └── smiley.py
+│    
 ├── .gitignore
 ├── pyproject.toml
-│
 ├── MANIFEST.in
-│
 ├── README.md
-└── img
-    └── smiley.png
+├── LICENSE.txt
+├── img
+│   └── smiley.png
+│    
+└── tests
+    └── test_smiley.py
 ```
 
-## `rai_smiley/smiley.py`
+## `src/rai_smiley/smiley.py`
 
 This is the star of the show,
 the file which contains our component.
@@ -60,7 +63,7 @@ Delete it!
 Otherwise, all of that code will run the moment
 the user runs `import rai_smiley`!
 
-## `rai_smiley/__init__.py`
+## `src/rai_smiley/__init__.py`
 
 This file is necessary to get Python to recognize `rai_smiley`
 as a package.
@@ -76,7 +79,7 @@ Note that technically, things should work without an `__init__.py`,
 but then you would be creating something called a *namespace package*,
 which is not what you want most of the time.
 
-## `rai_smiley/resources`
+## `src/rai_smiley/resources`
 
 Sometimes it is desirable to include non-python files (*resources*)
 within your package.
@@ -204,6 +207,13 @@ $$
 
 ````
 
+## `LICENSE.txt`
+
+This file contains the license under which you distribute your project.
+There is not set convention for what this file should be called,
+so any reasonable name should be okay, as long as it matches
+with the license file specified in `pyproject.toml`.
+
 ## `img`
 
 You can put any pictures you want to include in your `README.md`
@@ -220,4 +230,21 @@ However, please be mindful that some people have no problem with this,
 and it is their right to put binary files into version control systems.
 Tolerance and intercultural understanding are paramount to effective
 collaborative programming.
+
+## `tests`
+
+It is always a good idea to have automatic tests for your project.
+Think of it this way:
+programming is like installing a fitted carpet:
+just when you get one part of it to be nice and flat,
+another part at the opposite end of the room
+bulges up and needs to be fitted again.
+Programming without automatic tests is like trying to do the same,
+but in complete darkness:
+you can't even tell
+*when* there is a part that needs to be flattened!
+
+For more information on writing unit tests for Python,
+consult the
+[official documentation](https://docs.python.org/3/library/unittest.html).
 
