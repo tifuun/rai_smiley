@@ -2,7 +2,7 @@
 
 ![smiley component screenshot](img/smiley.png)
 
-This repository is intended as an example pycif package,
+This repository is intended as an example RAIMAD package,
 demonstrating the bare basics needed to share your components
 as a package.
 
@@ -12,7 +12,7 @@ It's a good idea to include an `installing` section
 in your project's README, even if it's as simple as
 
 ```
-pip install git+https://gitlab.example.com/exp-ast/pc_smiley
+pip install git+https://gitlab.example.com/exp-ast/rai_smiley
 ```
 
 # File Structure
@@ -23,9 +23,9 @@ The overall file structure looks like this:
 ```
 <repository root>
 │
-├── pc_smiley
+├── rai_smiley
 │   │ 
-│   ├── Smiley.py
+│   ├── smiley.py
 │   ├── __init__.py
 │   └── resources
 │       │ 
@@ -39,10 +39,10 @@ The overall file structure looks like this:
 │
 ├── README.md
 └── img
-    └── Smiley.png
+    └── smiley.png
 ```
 
-## `pc_smiley/Smiley.py`
+## `rai_smiley/smiley.py`
 
 This is the star of the show,
 the file which contains our component.
@@ -50,7 +50,7 @@ the file which contains our component.
 Note that almost every single line starts with at least an indent block.
 The only lines which are in the toplevel of the file are the
 module docstring at the very top,
-the `import pycif` line,
+the `import raimad` line,
 and the `Smiley` class declaration.
 
 You might have some stray code in your file that
@@ -58,11 +58,11 @@ tests something,
 or exports the component.
 Delete it!
 Otherwise, all of that code will run the moment
-the user runs `import pc_smiley`!
+the user runs `import rai_smiley`!
 
-## `pc_smiley/__init__.py`
+## `rai_smiley/__init__.py`
 
-This file is necessary to get Python to recognize `pc_smiley`
+This file is necessary to get Python to recognize `rai_smiley`
 as a package.
 You should put this `__init__.py` file inside every directory
 that has python code files in it.
@@ -76,7 +76,7 @@ Note that technically, things should work without an `__init__.py`,
 but then you would be creating something called a *namespace package*,
 which is not what you want most of the time.
 
-## `pc_smiley/resources`
+## `rai_smiley/resources`
 
 Sometimes it is desirable to include non-python files (*resources*)
 within your package.
@@ -97,7 +97,7 @@ or is it all inside of a `.zip` file?)
 
 To avoid these pains, we use `importlib.resources`
 to read in resource files.
-Take a look inside `Smiley.py` to learn how this works.
+Take a look inside `smiley.py` to learn how this works.
 
 ## `.gitignore`
 
@@ -130,12 +130,11 @@ for more information.
 Not that long ago, the function of `pyproject.toml` was done by a different
 file called `setup.py`.
 Indeed, many large projects still rely on `setup.py`,
-and you are free to do so too,
-but it's always best to follow the latests practices.
+and you are free to do so too.
 
 ## `MANIFEST.in`
 
-This file declares that everything under `pc_smiley/resources`
+This file declares that everything under `rai_smiley/resources`
 are part of this package and should never be ignored.
 You can read the comment inside `MANIFEST.in` for more information.
 
@@ -177,7 +176,7 @@ this is a code block
 ```
 
 ```python
-this is a code block with Python syntax highlight
+this is a code block with Python syntax highlighting
 ```
 
 [this](http://example.com) is a hyperlink

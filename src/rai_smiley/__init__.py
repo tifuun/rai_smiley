@@ -1,34 +1,17 @@
-from pc_smiley.Smiley import Smiley
+from rai_smiley.smiley import Smiley
 
-# The `__init__.py` file is necessary for Python to detect `pc_smiley` as
+# The `__init__.py` file is necessary for Python to detect `rai_smiley` as
 # a module.
-# Other `.py` files, like `Smiley.py` are detected as modules automatically.
-# Currently, our package `pc_smiley` packages a single module
-# called `pc_smiley`, with a submodule called `pc_smiley.Smiley`,
+# Other `.py` files, like `smiley.py` are detected as modules automatically.
+# Currently, our package `rai_smiley` packages a single module
+# called `rai_smiley`, with a submodule called `rai_smiley.Smiley`,
 # which in turn has a single class called
-# `pc_smiley.Smiley.Smiley`.
+# `rai_smiley.Smiley.Smiley`.
 # This can get annoying to type,
 # so the above line of code
 # imports the *class* Smiley into the root of the package,
-# so now pc_smiley.Smiley points directly to the class
+# so now rai_smiley.Smiley points directly to the class
 # instead of the module.
-#
-# This makes code looks cleaner. For example, users of your
-# package can now do
-#
-# from pc_smiley import Smiley
-#
-# instead of
-#
-# from pc_smiley.Smiley import Smiley
-#
-# likewise, using the command line to export the component now looks like
-#
-# python -m pycif export pc_smiley:Smiley
-#
-# instead of
-#
-# python -m pycif export pc_smiley.Smiley:Smiley
 #
 #
 # This technique is called *namespace flattening*.
