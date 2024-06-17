@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 # This section is about our project itself
 
 name = "rai_smiley"
-version = "2.0.2"
+version = "2.0.3"
 description = "A RAIMAD package that demonstrates how to make RAIMAD packages."
 authors = [
 	{name = "maybetree", email = "maybetree48@proton.me"}

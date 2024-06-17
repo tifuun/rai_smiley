@@ -15,5 +15,5 @@
 # However, that mechanism is in fact a prank played 
 # by the Python developers and doesn't actually work.
 
-include pc_smiley/resources/*
+include src/rai_smiley/resources/*
 
